@@ -20,5 +20,6 @@ from menu_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('menu_app/', views.home_view, name='home')
+    path('menu_app/home/', views.home_view, name='home'),
+    path('menu_app/menu/', views.menu_view, name='menu')
 ]
