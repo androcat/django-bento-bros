@@ -1,17 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
-def home_view(request, *args, **kwargs):
-    # return render(request, 'my_template.html')
-    # data = {
-    #     'name': 'John Doe',
-    #     'age': 30,
-    #     'skills': ['Python', 'Django', 'JavaScript'],
-    # }
-    return render(request, 'homepage.html') #{'data': data})
-
-def menu_view(request):
-    menu_list = [
+menu_list = [
       {
         "type": "appetizer",
         "price": 6.99,
@@ -125,4 +114,13 @@ def menu_view(request):
         "description": "Sweet red bean paste sandwiched between two fluffy pancakes. A popular traditional Japanese dessert."
       }
     ]
+# Create your views here.
+def home_view(request, *args, **kwargs):
+    return render(request, 'homepage.html') #{'data': data})
+
+def menu_view(request):
     return render(request, 'menu.html', {'data': menu_list})
+
+def menu_item_view(request, index):
+    menu_item = menu_list[index]
+    return render(request, 'menu_item.html', {'data_item': menu_item})

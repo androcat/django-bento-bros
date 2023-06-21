@@ -11,12 +11,20 @@
       <h1>Menu</h1>
       <ul style="list-style: none; width: 50%; margin: 0 auto; padding: 0">
         {% for item in data %}
-        <li style="width: 100%; display: flex; justify-content: space-between">
-          <p>{{ item.name }}</p>
-          <p>{{ item.price }}</p>
-        </li>
+        <a
+          style="text-decoration: none"
+          href="http://127.0.0.1:8000/menu_app/menu/{{ forloop.counter0 }}"
+        >
+          <li
+            style="width: 100%; display: flex; justify-content: space-between"
+          >
+            <p>{{ item.name }}</p>
+            <p>{{ item.price }}</p>
+          </li>
+        </a>
         {% endfor %}
       </ul>
+      <a href="http://127.0.0.1:8000/menu_app/home">~ Back to Home</a>
     </main>
   </body>
 </html>
